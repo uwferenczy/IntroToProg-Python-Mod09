@@ -30,12 +30,23 @@ while True:
 
     # Let user add data to the list of employee objects
     elif strChoice == '2':
-        listEmployee.append(IO.EmployeeIO.input_employee_data())
+        try:
+            listEmployee.append(IO.EmployeeIO.input_employee_data())
+        except Exception as e:
+            print('Employee data was not added.\n')
+            print(e)
+
         IO.EmployeeIO.input_press_to_continue()
 
     # let user save current data to file
     elif strChoice == '3':
-        PC.FileProcessor.save_data_to_file('EmployeeData.txt', listEmployee)
+        try:
+            PC.FileProcessor.save_data_to_file('EmployeeData.txt', listEmployee)
+            print("Employee data was successfully saved to the file.")
+        except Exception as e:
+            print('File not saved.\n')
+            print(e)
+
         IO.EmployeeIO.input_press_to_continue()
 
     # Let user exit program

@@ -76,3 +76,12 @@ class EmployeeIO:
             print(e)
         return emp
 
+    @staticmethod
+    def input_press_to_continue(optional_message=''):
+        """ Pause program and show a message before continuing
+
+        :param optional_message:  An optional message you want to display
+        :return: nothing
+        """
+        print(optional_message)
+        input('Press the [Enter] key to continue.')
